@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Buscador de series</title>
+</head>
+<body>
+
+   <header role="banner">
+        <div>
+            <img src="img/Copia de menu (1) 2.svg" alt="Imagen representativa del menú" class="menu-i" id="menuToggle" aria-label="Abrir menú">
+        </div>
+        <div>
+            <img src="img/logo.png" alt="Logo de la aplicación Series App" class="logo" role="img" aria-label="Logo Series App">  
+        </div>
+        <div>
+            <input type="text" id="buscador" placeholder="Busca tu serie favorita" name="Busca tu serie favorita " aria-label="Campo de búsqueda para serie">
+            <button class="buscar" aria-haspopup="dialog" aria-label="Click para buscar una serie">Buscar</button> 
+        </div>
+   </header> 
+
+   <main role="main">
+        <div id="muestra tu nombre de usuario una ves que estes  registrado" class="user-info" aria-live="polite">
+            <p>Bienvenido, <strong>Carlos Vallejo</strong></p>
+        </div>
+
+        <section id="series" class="series-grid" role="region" aria-label="Listado de series disponibles">
+            <article role="article" aria-labelledby="the-witcher">
+                <img class="item" src="img/the-witcher.jpg" alt="Poster de la serie: The Witcher" id="the-witcher">
+                <h4>The Witcher</h4>
+                <p>Calificación: 8.5/10</p>
+            </article>
+
+            <article role="article" aria-labelledby="la-casa-de-papel">
+                <img class="item" src="img/la-casa-de-papel.webp" alt="Poster de la serie: La Casa de Papel" id="la-casa-de-papel">
+                <h4>La Casa de Papel</h4>
+                <p>Calificación: 9/10</p>
+            </article>
+
+            <article role="article" aria-labelledby="club-de-cuervos">
+                <img class="item" src="img/club-de-cuervos.webp" alt="Poster de la serie: Club de Cuervos" id="club-de-cuervos">
+                <h4>Club de Cuervos</h4>
+                <p>Calificación: 10/10</p>
+            </article>
+
+            <article role="article" aria-labelledby="outer-banks">
+                <img class="item" src="img/outer-banks.webp" alt="Poster de la serie: Outer Banks" id="outer-banks">
+                <h4>Outer Banks</h4>
+                <p>Calificación: 7.5/10</p>
+            </article>
+
+            <article role="article" aria-labelledby="el-juego">
+                <img class="item" src="img/el-juego.jpg" alt="Poster de la serie: Juegos del Calamar" id="el-juego">
+                <h4>El Juego del Calamar</h4>
+                <p>Calificación: 10/10</p>
+            </article>
+
+            <article role="article" aria-labelledby="suits">
+                <img class="item" src="img/suits.webp" alt="Poster de la serie: Suits" id="suits">
+                <h4>Suits</h4>
+                <p>Calificación: 10/10</p>
+            </article>
+
+            <article role="article" aria-labelledby="the-walking">
+                <img class="item" src="img/the-walking.webp" alt="Poster de la serie: The Walking Dead" id="the-walking">
+                <h4>The Walking Dead</h4>
+                <p>Calificación: 8/10</p>
+            </article>
+            
+            <article role="article" aria-labelledby="stranger-things">
+                <img class="item" src="img/strager-things.jpg" alt="Poster de la serie: Stranger Things" id="stranger-things">
+                <h4>Stranger Things</h4>
+                <p>Calificación: 9.5/10</p>
+            </article>
+        </section>
+   </main>
+
+   
+   <section class="menu" role="navigation" aria-label="Menú de opciones">
+        <div class="menu_container" id="login" aria-label="Ir a iniciar sesión">
+            <img class="menu_img" src="img/user (3).svg" alt="Imagen representativa de un usuario" role="img">
+            <p>Usuario</p>
+        </div>
+        <div class="menu_container" aria-label="Ir a suscripción">
+            <img class="menu_img" src="img/credit-card.svg" alt="Imagen representativa de una suscripción" role="img">
+            <p>Suscríbete</p>
+        </div>
+        <div class="menu_container" aria-label="Ver más contenido">
+            <img class="menu_img" src="img/book-open.svg" alt="Imagen representativa de más contenido" role="img">
+            <p>Más contenido</p>
+        </div>
+   </section>
+
+   
+   <div id="login-form" class="login-form" role="dialog" aria-labelledby="form-title" aria-hidden="true">
+        <div class="form-container">
+            <h2 id="form-title">Iniciar sesión</h2>
+            <form id="login-form-content">
+                <label for="email" aria-label="Correo electrónico">Correo electrónico</label>
+                <input type="email" id="email" required placeholder="Ingresa tu correo" aria-label="Correo electrónico">
+                <br>
+                <label for="password" aria-label="Contraseña">Contraseña</label>
+                <input type="password" id="password" required placeholder="Ingresa tu contraseña" aria-label="Contraseña">
+                <br>
+                <button type="button" id="submit-login" aria-label="Confirmar inicio de sesión">Confirmar</button>
+                <button type="button" id="close-form" aria-label="Cerrar el formulario de inicio de sesión">Cerrar</button>
+            </form>
+        </div>
+    </div>
+
+   <footer role="contentinfo">
+        <p>Creada en 2024 &copy;</p>
+   </footer>
+
+   <script src="js/style.js" defer></script>
+   <script src="js/login.js" defer></script>
+</body>
+</html>
